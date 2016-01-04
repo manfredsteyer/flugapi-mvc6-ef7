@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DataAccessLayer.Flug>
+<h1>Flights!</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Von</th>
+        <th>Nach</th>
+        <th>Datum</th>
+    </tr>
+    @foreach(var f in Model) {
+    <tr>
+        <td>@f.Id</td>
+        <td>@f.Abflugort</td>
+        <td>@f.Zielort</td>
+        <td>@f.Datum</td>
+    </tr>
+    }
+</table>

@@ -1,0 +1,10 @@
+{
+	"version": "1.0.0",
+	"name": "ASP.NET",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
+	"devDependencies": {
+	}
+}
