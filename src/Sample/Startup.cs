@@ -8,6 +8,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.SwaggerGen;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Sample
 {
@@ -21,11 +22,13 @@ namespace Sample
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 options.SerializerSettings.Formatting = Formatting.Indented;
                 // options.SerializerSettings.TypeNameHandling = TypeNameHandling.Objects;
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
 
             services.AddCors();
 
             services.AddSwaggerGen();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
